@@ -22,7 +22,7 @@ module Plutus
       else
         order = 'DESC'
       end
-      @entries = Entry.page(params[:page]).per_page(params[:limit]).order("date #{order}")
+      @entries = Entry.page(params[:page].to_i).per_page(params[:limit].to_i).order("date #{order}")
 
       respond_to do |format|
         format.html # index.html.erb
